@@ -1,13 +1,6 @@
 use std::env;
 use std::fs;
 
-fn find_highest_hold_time(total_time: usize) -> usize {
-    let a: isize = -1;
-    let b: isize = total_time as isize;
-
-    (-b / (2 * a)) as usize
-}
-
 fn find_hold_time_range(total_time: usize, distance: usize) -> (usize, usize) {
     // distance = (total_time - hold_time) * hold_time
     // distance = total_time * hold_time - hold_time^2
@@ -23,10 +16,6 @@ fn find_hold_time_range(total_time: usize, distance: usize) -> (usize, usize) {
 
     println!("x1: {}, x2: {}", x1, x2);
     (x1.ceil() as usize, x2.floor() as usize)
-}
-
-fn formula(total_time: usize, hold_time: usize) -> usize {
-    (total_time - hold_time) * hold_time
 }
 
 fn get_possible_hold_times_count(total_time: usize, distance: usize) -> usize {
